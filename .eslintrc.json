@@ -1,0 +1,52 @@
+{
+  "extends": [
+    "airbnb-typescript",
+    "airbnb/hooks",
+    "plugin:@typescript-eslint/eslint-recommended",
+    "plugin:@typescript-eslint/recommended",
+    "prettier/react",
+    "prettier/@typescript-eslint"
+  ],
+  "parser": "@typescript-eslint/parser",
+  "parserOptions": {
+    "ecmaFeatures": {
+      "jsx": true
+    },
+    "ecmaVersion": 2020,
+    "project": "tsconfig.json",
+    "sourceType": "module"
+  },
+  "plugins": ["eslint-plugin-import-helpers"],
+  "rules": {
+    "comma-dangle": "off",
+    "import-helpers/order-imports": [
+      "error",
+      {
+        "alphabetize": {
+          "ignoreCase": true,
+          "order": "asc"
+        },
+        "groups": ["/^react/", "module", ["parent", "sibling", "index"]],
+        "newlinesBetween": "always"
+      }
+    ],
+    "react/jsx-sort-props": [
+      "error",
+      {
+        "ignoreCase": true
+      }
+    ],
+    "sort-imports": [
+      "error",
+      {
+        "ignoreCase": true,
+        "ignoreDeclarationSort": true
+      }
+    ]
+  },
+  "settings": {
+    "react": {
+      "version": "detect"
+    }
+  }
+}
